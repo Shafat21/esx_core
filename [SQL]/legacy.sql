@@ -1,3 +1,5 @@
+-- ESX Tables
+
 CREATE TABLE `addon_account` (
   `name` varchar(60) NOT NULL,
   `label` varchar(100) NOT NULL,
@@ -820,6 +822,13 @@ ALTER TABLE `owned_vehicles`
   ADD PRIMARY KEY (`plate`);
 
 --
+--
+-- Indexes for table `vehicles`
+--
+ALTER TABLE `vehicles`
+  ADD PRIMARY KEY (`model`);
+
+--
 -- Indexes for table `rented_vehicles`
 --
 ALTER TABLE `rented_vehicles`
@@ -1009,6 +1018,7 @@ CREATE TABLE IF NOT EXISTS `banking` (
   `time` bigint(20) DEFAULT NULL,
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `balance` int(11) DEFAULT 0,
+  `label` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
